@@ -13,5 +13,13 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v3
 
-      - name: "See what's in the folder"
-        run: "ls"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "npm"
+
+      - name: "Install dependencies"
+        run: "npm ci"
+
+      - name: "Run ESLint"
+        run: "npm run lint"
