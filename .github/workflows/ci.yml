@@ -10,11 +10,8 @@ jobs:
     name: "CI"
     runs-on: ubuntu-latest
     steps:
-      - name: "Success"
-        run: "exit 0"
+      - name: Check out Git repository
+        uses: actions/checkout@v3
 
-      - name: "Fail"
-        run: "exit 1"
-
-      - name: "This won't run"
-        run: "echo heloo"
+      - name: "See what's in the folder"
+        run: "ls"
