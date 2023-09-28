@@ -10,5 +10,11 @@ jobs:
     name: "CI"
     runs-on: ubuntu-latest
     steps:
-      - name: "Echo hello word"
-        run: "echo hello"
+      - name: "Success"
+        run: "exit 0"
+
+      - name: "Fail"
+        run: "exit 1"
+
+      - name: "This won't run"
+        run: "echo heloo"
